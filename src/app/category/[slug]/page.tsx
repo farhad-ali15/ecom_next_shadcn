@@ -2,6 +2,14 @@ import ProductCard from "@/components/ProductCard";
 import { Products } from "@/lib/Utils/mock";
 import { Product } from "@/lib/Utils/types";
 
+
+export const generateMetadata = ({ params }: { params: { slug: string } }) => {
+  return {
+    title: `Dine Market | ${params.slug}`,
+    description: "Home Page Shop As You Go",
+  };
+};
+
 export const getFilteredProducts = (category: string) => {
   return Products.filter((p: Product) => p.category === category);
 };
